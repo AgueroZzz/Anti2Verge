@@ -1,0 +1,23 @@
+# Anti2Verge 配置文件示例
+app:
+  auto_start: false           # 是否开机自启
+  auto_launch: true           # 启动 Anti2Verge 时是否立即自动拉起 Antigravity (带代理)
+  minimize_to_tray: true      # 启动后常驻系统托盘 (位于右下角时间旁边的通知区域)
+  log_level: "info"           # 日志级别: debug, info, warn, error
+
+clash:
+  auto_detect: true           # 自动探测 Clash Verge / Mihomo 端口
+  fallback_http_port: 7897    # 默认备用 HTTP/混合 端口
+  fallback_socks_port: 7897   # 默认备用 SOCKS5 端口
+  probe_ports:                # 候选探测端口列表
+    - 7897
+    - 7890
+    - 10809
+    - 7891
+  api_endpoint: "http://127.0.0.1:9097" # External Controller 地址
+  api_secret: ""              # External Controller 密钥 (若有)
+
+antigravity:
+  executable_path: ""         # 留空则启用自动探测机制
+  extra_args: []              # 附加启动参数，例如 ["--disable-gpu"]
+  bypass_tls_verify: false    # 是否禁用 Node.js TLS 校验 (仅在需要自签证书/MITM 时开启)
